@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="250px"
+        android:layout_margin="5px"
+        card_view:cardCornerRadius="4dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/date"
+               android:layout_centerHorizontal="true"
+                android:padding="10px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="date value"
+                android:textSize="40px"></TextView>
+        <TextView
+            android:id="@+id/team1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="50px"
+            android:text="Team1"
+            android:textSize="80px"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VS"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="50px"></TextView>
+
+            <TextView
+                android:id="@+id/team2"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="50px"
+                android:layout_marginLeft="40px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="50px"
+                android:text="Team2"
+                android:textSize="80px"/>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
