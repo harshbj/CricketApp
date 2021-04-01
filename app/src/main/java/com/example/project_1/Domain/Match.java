@@ -4,6 +4,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
@@ -128,21 +130,30 @@ public class Match {
 
 
 
-    public static ArrayList<Match> createMatchList(String matchData) throws JSONException {
+    public static ArrayList<Match> createMatchList(String matchData) throws JSONException, ParseException {
         ArrayList<Match> matches = new ArrayList<Match>();
         JSONObject json = new JSONObject(matchData);
         JSONArray matchesJson  = json.getJSONArray("matches");
+        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        SimpleDateFormat outputFormat = new SimpleDateFormat("dd MMMM yyyy");
         for(int i=0;i<matchesJson.length();i++)
         {
-            Match match = new Match(matchesJson.getJSONObject(i).getInt("unique_id"),
-                    matchesJson.getJSONObject(i).getString("date"),
-                    matchesJson.getJSONObject(i).getString("dateTimeGMT"),
-                    matchesJson.getJSONObject(i).getString("team-1"),
-                    matchesJson.getJSONObject(i).getString("team-2"),
-                    matchesJson.getJSONObject(i).getBoolean("squad"),
-                    matchesJson.getJSONObject(i).getString("type"),
-            "","",false);
-            matches.add(match);
+
+                //System.out.println(matchesJson.getJSONObject(i).getString("type"));
+                Date date = inputFormat.parse(matchesJson.getJSONObject(i).getString("date"));
+                String formattedDate = outputFormat.format(date);
+                Match match = new Match(matchesJson.getJSONObject(i).getInt("unique_id"),
+                        formattedDate,
+                        matchesJson.getJSONObject(i).getString("dateTimeGMT"),
+                        matchesJson.getJSONObject(i).getString("team-1"),
+                        matchesJson.getJSONObject(i).getString("team-2"),
+                        matchesJson.getJSONObject(i).getBoolean("squad"),
+                        matchesJson.getJSONObject(i).getString("type"),
+                        "", "", false);
+            if(matchesJson.getJSONObject(i).getString("type").equals("Twenty20") && !matchesJson.getJSONObject(i).getBoolean("matchStarted"));
+            {
+                matches.add(match);
+            }
 
         }
         return matches;

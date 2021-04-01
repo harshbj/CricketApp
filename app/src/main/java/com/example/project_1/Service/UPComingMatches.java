@@ -13,6 +13,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class UPComingMatches extends AsyncTask<String,Void,ArrayList<Match>> {
@@ -54,16 +55,17 @@ public class UPComingMatches extends AsyncTask<String,Void,ArrayList<Match>> {
 
         }
         try {
-            matchList = Match.createMatchList(matchData);
+            try {
+                matchList = Match.createMatchList(matchData);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return matchList;
     }
 
-    @Override
-    protected void onPostExecute(ArrayList<Match> matches) {
-        MainActivity.matches = matches;
-    }
+
 
 }
