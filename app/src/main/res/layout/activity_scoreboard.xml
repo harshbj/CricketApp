@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
+        android:background="#BEBDE1"
         tools:context=".Scoreboard">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary_dark"
+        android:elevation="10dp"/>
+
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -16,25 +25,25 @@
             android:layout_weight="0.1"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="0.9"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="fill_parent"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:layout_weight="0.9"-->
+<!--                android:orientation="vertical">-->
 
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_weight="0.7"
-                    android:gravity="top|center_horizontal"
-                    android:text="Loading"
-                    android:textSize="20sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/title"-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="fill_parent"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_weight="0.7"-->
+<!--                    android:gravity="top|center_horizontal"-->
+<!--                    android:text="Loading"-->
+<!--                    android:textSize="20sp" />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
             <ScrollView
                 android:id="@+id/scrollView2"
@@ -43,28 +52,26 @@
                 android:layout_weight="0.1"
                 android:fillViewport="true">
 
-                <LinearLayout
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/cardview1"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="4dp"-->
+<!--                    android:layout_below="@+id/toolbar"-->
+<!--                    android:layout_margin="10dp">-->
+                    <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                        android:layout_marginTop="10dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        >
 
-                        <TextView
-                            android:id="@+id/description"
-                            android:layout_width="257dp"
-                            android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/summary"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_column="1"
-                            android:layout_columnSpan="1"
-                            android:layout_row="0"
-                            android:layout_rowSpan="1"
-                            android:layout_weight="1"
-                            android:text="Summary" />
+
 
                         <TextView
                             android:id="@+id/textView"
@@ -75,9 +82,40 @@
                             android:layout_alignParentTop="true"
                             android:layout_column="0"
                             android:layout_row="0"
-                            android:text="Description:"
+                            android:textSize="20dp"
+                            android:text=" Teams : "
+                            android:textColor="#000"
                             android:textAppearance="?android:attr/textAppearanceSmall" />
+                        <TextView
+                            android:id="@+id/description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/summary"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_column="1"
+                            android:layout_columnSpan="1"
+                            android:layout_row="0"
+                            android:textSize="20dp"
+                            android:layout_rowSpan="1"
+                            android:layout_weight="1"
+                            android:textColor="#000"
+                            android:text=" Team1 vs Team2" />
 
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@+id/description"
+                            android:layout_column="0"
+                            android:layout_marginTop="10dp"
+                            android:layout_row="1"
+                            android:text=" Status :"
+                            android:textSize="20dp"
+                            android:textColor="#000"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
                         <TextView
                             android:id="@+id/summary"
                             android:layout_width="fill_parent"
@@ -88,70 +126,108 @@
                             android:layout_row="1"
                             android:layout_toRightOf="@+id/textView2"
                             android:layout_weight="1"
-                            android:text="Status Loading" />
+                            android:textColor="#000"
+                            android:textSize="20dp"
+                            android:text=" Status Loading" />
+
+                    </RelativeLayout>
+                    </LinearLayout>
+<!--                </androidx.cardview.widget.CardView>-->
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                        <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="71dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_column="0"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_row="1"
+                                    android:text="Score : "
+                                    android:textSize="20dp"
+                                    android:textColor="#000"
+                                    android:textAppearance="?android:attr/textAppearanceSmall" />
 
                         <TextView
-                            android:id="@+id/textView2"
+                            android:id="@+id/summary2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/textView3"
+                            android:layout_column="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_row="1"
+                            android:layout_toRightOf="@+id/textView3"
+                            android:layout_weight="1"
+                            android:textSize="20dp"
+                            android:textColor="#000"
+                            android:text="Score Loading" />
+
+                        <TextView
+                            android:id="@+id/textView4"
                             android:layout_width="71dp"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:layout_below="@+id/description"
+                            android:layout_below="@+id/textView3"
                             android:layout_column="0"
                             android:layout_marginTop="10dp"
                             android:layout_row="1"
-                            android:text="Status:"
+                            android:textSize="20dp"
+                            android:text="Over : "
+                            android:textColor="#000"
                             android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+                        <TextView
+                            android:id="@+id/summary3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/textView4"
+                            android:layout_column="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_row="1"
+                            android:layout_toRightOf="@+id/textView4"
+                            android:layout_weight="1"
+                            android:textSize="20dp"
+                            android:textColor="#000"
+                            android:text="Over Loading" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@+id/textView4"
+                            android:layout_column="0"
+                            android:layout_marginTop="10dp"
+                            android:layout_row="1"
+                            android:text="Comment : "
+                            android:textSize="20dp"
+                            android:textColor="#000"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+                        <TextView
+                            android:id="@+id/summary4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/textView5"
+                            android:layout_column="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_row="1"
+                            android:layout_toRightOf="@+id/textView5"
+                            android:layout_weight="1"
+                            android:textSize="20dp"
+                            android:textColor="#000"
+                            android:text="Comment Loading" />
 
                     </RelativeLayout>
 
-                    <ScrollView
-                        android:id="@+id/scrollView3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        android:fillViewport="true">
-
-                        <LinearLayout
-                            android:id="@+id/dataLinearLayout"
-                            android:layout_width="fill_parent"
-                            android:layout_height="64dp"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:id="@+id/internalLayout"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/tvTeamName"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignBottom="@+id/summary"
-                                    android:layout_alignParentLeft="true"
-                                    android:layout_marginBottom="26dp"
-                                    android:text="Small Text"
-                                    android:textAppearance="?android:attr/textAppearanceSmall" />
-
-                                <TextView
-                                    android:id="@+id/tvTeamScore"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_marginLeft="20dp"
-                                    android:layout_toRightOf="@+id/tvTeamName"
-                                    android:text="Small Text"
-                                    android:textAppearance="?android:attr/textAppearanceSmall" />
-                            </LinearLayout>
-
-                        </LinearLayout>
-                    </ScrollView>
-
                     <RelativeLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_height="fill_parent"
+                        android:layout_marginTop="20dp">
 
                         <TextView
                             android:id="@+id/tvCurrentInning"
@@ -159,29 +235,50 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
-                            android:text="Current Inning"
+                            android:text="Players"
+                            android:textSize="30dp"
+                            android:textStyle="bold"
                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-                        <TableLayout
-                            android:id="@+id/scoreCard"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_alignParentLeft="true"
+                        <TextView
+                            android:id="@+id/team1players"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Team 1 Players :"
+                            android:textSize="20dp"
+                            android:textColor="#000"
                             android:layout_below="@+id/tvCurrentInning"
-                            android:orientation="horizontal"
-                            android:padding="8dp"
-                            android:showDividers="middle|beginning|end">
+                            android:layout_marginTop="20dp"/>
+                        <TextView
+                            android:id="@+id/players1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/team1players"
+                            android:text="Players 1"
+                            android:textColor="#000"
+                            android:textSize="15dp"
+                            android:layout_marginTop="10dp"/>
 
-                            <TableRow
-                                android:layout_width="fill_parent"
-                                android:layout_height="fill_parent">
-
-                            </TableRow>
-                        </TableLayout>
-
+                        <TextView
+                            android:id="@+id/team2players"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Team 2 Players :"
+                            android:textSize="20dp"
+                            android:textColor="#000"
+                            android:layout_below="@+id/players1"
+                            android:layout_marginTop="20dp"/>
+                        <TextView
+                            android:id="@+id/players2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/team2players"
+                            android:text="Players 2"
+                            android:textSize="15dp"
+                            android:textColor="#000"
+                            android:layout_marginTop="10dp"/>
                     </RelativeLayout>
 
-                </LinearLayout>
             </ScrollView>
 
         </LinearLayout>
