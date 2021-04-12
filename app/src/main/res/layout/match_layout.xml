@@ -11,11 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="250px"
         android:layout_margin="5px"
+        android:onClick="showScoreBoard"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
         card_view:cardCornerRadius="4dp">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/state"
+                android:padding="10px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="40px">
 
+            </TextView>
 
             <TextView
                 android:id="@+id/date"
@@ -64,12 +75,14 @@
 
         </TextView>
             <TextView
+                android:id="@+id/id"
+                android:layout_centerHorizontal="true"
+                android:padding="10px"
                 android:layout_below="@+id/vs"
+                android:visibility="invisible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Start Time"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
+                android:text="Date"
                 android:textSize="40px">
 
             </TextView>
@@ -88,6 +101,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_centerVertical="true"
                 android:textSize="40px" />
+
 
             <ImageView
                 android:id="@+id/imageteam2"

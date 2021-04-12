@@ -2,9 +2,13 @@ package com.example.project_1.Adapter;
 
 
 import android.content.Context;
+import android.graphics.Typeface;
+import android.sax.TextElementListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -12,6 +16,7 @@ import com.example.project_1.Domain.Match;
 import com.example.project_1.R;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeoutException;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,6 +51,21 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.ViewHolder> 
         team2.setText(match.getTeam_2());
         TextView date = holder.date;
         date.setText(match.getDate());
+        TextView id = holder.id;
+        id.setText(match.getId());
+        if(match.getMatch_started().equals("LIVE"))
+        {
+            TextView state = holder.state;
+            state.setText("LIVE");
+            state.setTypeface(null, Typeface.BOLD);
+            state.setVisibility(View.VISIBLE);
+            Animation anim = new AlphaAnimation(0.0f, 1.0f);
+            anim.setDuration(800); //You can manage the blinking time with this parameter
+            anim.setStartOffset(20);
+            anim.setRepeatMode(Animation.REVERSE);
+            anim.setRepeatCount(Animation.INFINITE);
+            state.startAnimation(anim);
+        }
 
 
     }
@@ -59,12 +79,16 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.ViewHolder> 
         public TextView team1;
         public TextView team2;
         public TextView date;
+        public TextView id;
+        public TextView state;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             team1 = (TextView) itemView.findViewById(R.id.team1);
             team2 = (TextView) itemView.findViewById(R.id.team2);
             date = (TextView) itemView.findViewById(R.id.date);
+            id = (TextView) itemView.findViewById(R.id.id);
+            state = (TextView) itemView.findViewById(R.id.state);
         }
     }
 }

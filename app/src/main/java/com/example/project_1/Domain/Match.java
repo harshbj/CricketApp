@@ -1,5 +1,14 @@
 package com.example.project_1.Domain;
 
+import android.os.Build;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,11 +18,13 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Match {
 
 
-    public Match(Integer id, String date, String localDateTime, String team_1, String team_2, Boolean squad, String type, String toss_winner, String winner_team, boolean match_started) {
+    public Match(String id, String date, String localDateTime, String team_1, String team_2, Boolean squad, String type, String toss_winner, String winner_team, String match_started) {
         this.id = id;
         this.date = date;
         this.localDateTime = localDateTime;
@@ -25,7 +36,7 @@ public class Match {
         this.winner_team = winner_team;
         this.match_started = match_started;
     }
-    private Integer id;
+    private String id;
     private String date;
     private String localDateTime;
     private String team_1;
@@ -34,7 +45,7 @@ public class Match {
     private String type;
     private String toss_winner;
     private String winner_team;
-    private Boolean match_started;
+    private String match_started;
 
     public String getDate() {
         return date;
@@ -61,19 +72,19 @@ public class Match {
     }
 
 
-    public Boolean getMatch_started() {
+    public String getMatch_started() {
         return match_started;
     }
 
-    public void setMatch_started(Boolean match_started) {
+    public void setMatch_started(String match_started) {
         this.match_started = match_started;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -118,44 +129,38 @@ public class Match {
         this.winner_team = winner_team;
     }
 
-    public boolean isMatch_started() {
+    public String isMatch_started() {
         return match_started;
     }
 
-    public void setMatch_started(boolean match_started) {
-        this.match_started = match_started;
-    }
 
 
-
-
-
-    public static ArrayList<Match> createMatchList(String matchData) throws JSONException, ParseException {
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public static ArrayList<Match> createMatchList(Task<QuerySnapshot> matchData) throws JSONException, ParseException {
         ArrayList<Match> matches = new ArrayList<Match>();
-        JSONObject json = new JSONObject(matchData);
-        JSONArray matchesJson  = json.getJSONArray("matches");
         SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         SimpleDateFormat outputFormat = new SimpleDateFormat("dd MMMM yyyy");
-        for(int i=0;i<matchesJson.length();i++)
-        {
 
-                //System.out.println(matchesJson.getJSONObject(i).getString("type"));
-                Date date = inputFormat.parse(matchesJson.getJSONObject(i).getString("date"));
+        for (QueryDocumentSnapshot document : matchData.getResult()) {
+            Map<String, Object> map = document.getData();
+            Map<String,String> matchMap = (Map<String, String>) map.get("match");
+            ArrayList<Object> teams = (ArrayList<Object>) map.get("teams");
+            Map<String,String> team1 = (Map<String, String>) teams.get(0);
+            Map<String,String> team2 = (Map<String, String>) teams.get(1);
+                Date date = inputFormat.parse(matchMap.get("start_time"));
                 String formattedDate = outputFormat.format(date);
-                Match match = new Match(matchesJson.getJSONObject(i).getInt("unique_id"),
+                Match match = new Match(document.getId(),
                         formattedDate,
-                        matchesJson.getJSONObject(i).getString("dateTimeGMT"),
-                        matchesJson.getJSONObject(i).getString("team-1"),
-                        matchesJson.getJSONObject(i).getString("team-2"),
-                        matchesJson.getJSONObject(i).getBoolean("squad"),
-                        matchesJson.getJSONObject(i).getString("type"),
-                        "", "", false);
-            if(matchesJson.getJSONObject(i).getString("type").equals("Twenty20") && !matchesJson.getJSONObject(i).getBoolean("matchStarted"));
-            {
-                matches.add(match);
-            }
+                        "",
+                        team1.get("name"),
+                        team2.get("name"),
+                        true,
+                        "IPL",
+                        "", "", matchMap.get("state"));
 
+                matches.add(match);
         }
+        System.out.println("Dtaa passed"+matches.size());
         return matches;
     }
 }
