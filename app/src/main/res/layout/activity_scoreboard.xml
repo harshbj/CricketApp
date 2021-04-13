@@ -7,15 +7,13 @@
         android:layout_height="match_parent"
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
-        android:background="#BEBDE1"
+        android:background="#C3FFFFFF"
         tools:context=".Scoreboard">
 
         <RelativeLayout
             android:id="@+id/view"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_weight="0.1"
             android:orientation="vertical">
 
@@ -26,6 +24,96 @@
                 android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
                 android:indeterminate="true" />
+
+
+
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/scorecardview"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="200dp"-->
+<!--                app:cardBackgroundColor="#fff"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                app:cardCornerRadius="5dp">-->
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linear1"-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_marginTop="10dp">-->
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="fill_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        >-->
+<!--                <TextView-->
+<!--                    android:id="@+id/textView.."-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignBottom="@+id/vs"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_column="0"-->
+<!--                    android:layout_row="0"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:text=" Teams : "-->
+<!--                    android:textColor="#000"-->
+<!--                    android:textAppearance="?android:attr/textAppearanceSmall" />-->
+<!--                <TextView-->
+<!--                    android:id="@+id/vs.."-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignLeft="@+id/statusValue"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_column="1"-->
+<!--                    android:layout_columnSpan="1"-->
+<!--                    android:layout_row="0"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:layout_rowSpan="1"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:textColor="#000"-->
+<!--                    android:text=" Team1 vs Team2" />-->
+<!--                </LinearLayout>-->
+
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linear2"-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_marginTop="10dp">-->
+<!--                <TextView-->
+<!--                    android:id="@+id/status.."-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_below="@+id/vs"-->
+<!--                    android:layout_column="0"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_row="1"-->
+<!--                    android:text=" Status :"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:textColor="#000"-->
+<!--                    android:textAppearance="?android:attr/textAppearanceSmall" />-->
+<!--                <TextView-->
+<!--                    android:id="@+id/statusValue.."-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignTop="@+id/status"-->
+<!--                    android:layout_column="1"-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:layout_row="1"-->
+<!--                    android:layout_toRightOf="@+id/status"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:textColor="#000"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:text=" Status Loading" />-->
+<!--                </LinearLayout>-->
+<!--                -->
+<!--            </androidx.cardview.widget.CardView>-->
+
 
 <!--            <LinearLayout-->
 <!--                android:layout_width="fill_parent"-->
@@ -55,237 +143,287 @@
                 android:fillViewport="true">
 
 
-<!--                <androidx.cardview.widget.CardView-->
-<!--                    android:id="@+id/cardview1"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    app:cardCornerRadius="4dp"-->
-<!--                    android:layout_below="@+id/toolbar"-->
-<!--                    android:layout_margin="10dp">-->
+
+
                     <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                        android:layout_marginTop="10dp">
-
-                    <RelativeLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        >
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+<!--                        android:layout_below="@+id/scorecardview"-->
+
+<!--                        android:layout_margin="10dp"-->
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:id="@+id/cardview1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:cardCornerRadius="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginTop="30dp"
+                                        android:elevation="50dp"
+                                        android:background="#000"
+                                        app:cardBackgroundColor="#021473"
+                                        app:cardUseCompatPadding="true">
 
 
+                                            <RelativeLayout
+                                                android:id="@+id/relative1"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/textView"
-                            android:layout_width="wrap_content"
+                                                <TextView
+                                                    android:id="@+id/textView"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignParentLeft="true"
+                                                    android:layout_alignParentTop="true"
+                                                    android:layout_column="0"
+                                                    android:layout_row="0"
+                                                    android:textSize="20dp"
+                                                    android:text=" Teams : "
+                                                    android:textColor="#fff"
+                                                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                                                <TextView
+                                                    android:id="@+id/vs"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignLeft="@+id/statusValue"
+                                                    android:layout_alignParentTop="true"
+                                                    android:layout_column="1"
+                                                    android:layout_columnSpan="1"
+                                                    android:layout_row="0"
+                                                    android:textSize="20dp"
+                                                    android:layout_rowSpan="1"
+                                                    android:layout_weight="1"
+                                                    android:textColor="#fff"
+                                                    android:text=" Team1 vs Team2" />
+
+
+                                                <TextView
+                                                    android:id="@+id/status"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_below="@+id/vs"
+                                                    android:layout_marginTop="10dp"
+                                                    android:text=" Status :"
+                                                    android:textSize="20dp"
+                                                    android:textColor="#fff"/>
+                                                <TextView
+                                                    android:id="@+id/statusValue"
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignTop="@+id/status"
+                                                    android:layout_column="1"
+                                                    android:layout_marginLeft="5dp"
+                                                    android:layout_row="1"
+                                                    android:layout_toRightOf="@+id/status"
+                                                    android:layout_weight="1"
+                                                    android:textColor="#fff"
+                                                    android:textSize="20dp"
+                                                    android:text=" Status Loading" />
+                                                <TextView
+                                                    android:id="@+id/state"
+                                                    android:padding="10px"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text=""
+                                                    android:layout_alignParentRight="true"
+                                                    android:textColor="#FFFFFF"
+                                                    android:textSize="30px"
+                                                    android:layout_marginLeft="5dp"/>
+
+                                                <TextView
+                                                    android:id="@+id/score"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignParentLeft="true"
+                                                    android:layout_column="0"
+                                                    android:layout_row="1"
+                                                    android:text=" Score : "
+                                                    android:layout_below="@+id/status"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_marginBottom="5dp"
+                                                    android:textSize="20dp"
+                                                    android:textColor="#fff"
+                                                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                                                <TextView
+                                                    android:id="@+id/scoreValue"
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignTop="@+id/score"
+                                                    android:layout_column="1"
+                                                    android:layout_row="1"
+                                                    android:layout_toRightOf="@+id/score"
+                                                    android:layout_weight="1"
+                                                    android:textSize="20dp"
+                                                    android:textColor="#fff"
+                                                    android:text=" Score Loading" />
+                                            </RelativeLayout>
+                                    </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview3"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignBottom="@+id/vs"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_column="0"
-                            android:layout_row="0"
-                            android:textSize="20dp"
-                            android:text=" Teams : "
-                            android:textColor="#000"
-                            android:textAppearance="?android:attr/textAppearanceSmall" />
-                        <TextView
-                            android:id="@+id/vs"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/statusValue"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_column="1"
-                            android:layout_columnSpan="1"
-                            android:layout_row="0"
-                            android:textSize="20dp"
-                            android:layout_rowSpan="1"
-                            android:layout_weight="1"
-                            android:textColor="#000"
-                            android:text=" Team1 vs Team2" />
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
+                            android:elevation="50dp"
+                            app:cardBackgroundColor="#021473"
+                            app:cardUseCompatPadding="true"
+                            >
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
 
 
-                        <TextView
-                            android:id="@+id/status"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_below="@+id/vs"
-                            android:layout_column="0"
-                            android:layout_marginTop="10dp"
-                            android:layout_row="1"
-                            android:text=" Status :"
-                            android:textSize="20dp"
-                            android:textColor="#000"
-                            android:textAppearance="?android:attr/textAppearanceSmall" />
-                        <TextView
-                            android:id="@+id/statusValue"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@+id/status"
-                            android:layout_column="1"
-                            android:layout_marginLeft="5dp"
-                            android:layout_row="1"
-                            android:layout_toRightOf="@+id/status"
-                            android:layout_weight="1"
-                            android:textColor="#000"
-                            android:textSize="20dp"
-                            android:text=" Status Loading" />
-
-                    </RelativeLayout>
-
-<!--                </androidx.cardview.widget.CardView>-->
-
-                        <RelativeLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content">
-                        <TextView
-                                    android:id="@+id/score"
-                                    android:layout_width="71dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentLeft="true"
-                                    android:layout_column="0"
-                                    android:layout_marginTop="10dp"
-                                    android:layout_row="1"
-                                    android:text="Score : "
-                                    android:textSize="20dp"
-                                    android:textColor="#000"
-                                    android:textAppearance="?android:attr/textAppearanceSmall" />
-
-                        <TextView
-                            android:id="@+id/scoreValue"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@+id/score"
-                            android:layout_column="1"
-                            android:layout_marginLeft="5dp"
-                            android:layout_row="1"
-                            android:layout_toRightOf="@+id/score"
-                            android:layout_weight="1"
-                            android:textSize="20dp"
-                            android:textColor="#000"
-                            android:text="Score Loading" />
-
-                        <TextView
-                            android:id="@+id/over"
-                            android:layout_width="71dp"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_below="@+id/score"
-                            android:layout_column="0"
-                            android:layout_marginTop="10dp"
-                            android:layout_row="1"
-                            android:textSize="20dp"
-                            android:text="Over : "
-                            android:textColor="#000"
-                            android:textAppearance="?android:attr/textAppearanceSmall" />
+                                    <TextView
+                                        android:id="@+id/over"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_column="0"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_row="1"
+                                        android:textSize="20dp"
+                                        android:text=" Over : "
+                                        android:textColor="#fff"
+                                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 
-                        <TextView
-                            android:id="@+id/overValue"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@+id/over"
-                            android:layout_column="1"
-                            android:layout_marginLeft="5dp"
-                            android:layout_row="1"
-                            android:layout_toRightOf="@+id/over"
-                            android:layout_weight="1"
-                            android:textSize="20dp"
-                            android:textColor="#000"
-                            android:text="Over Loading" />
+                                    <TextView
+                                        android:id="@+id/overValue"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignTop="@+id/over"
+                                        android:layout_column="1"
+                                        android:layout_row="1"
+                                        android:layout_toRightOf="@+id/over"
+                                        android:layout_weight="1"
+                                        android:textSize="20dp"
+                                        android:textColor="#fff"
+                                        android:text=" Over Loading" />
 
-                        <TextView
-                            android:id="@+id/comment"
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_below="@+id/over"
-                            android:layout_column="0"
-                            android:layout_marginTop="10dp"
-                            android:layout_row="1"
-                            android:text="Comment : "
-                            android:textSize="20dp"
-                            android:textColor="#000"
-                            android:textAppearance="?android:attr/textAppearanceSmall" />
+                                    <TextView
+                                        android:id="@+id/comment"
+                                        android:layout_width="110dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_below="@+id/over"
+                                        android:layout_column="0"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_row="1"
+                                        android:text=" Comment :"
+                                        android:textSize="20dp"
+                                        android:textColor="#fff"
+                                        android:layout_marginBottom="5dp"
+                                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 
-                        <TextView
-                            android:id="@+id/commentValue"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@+id/comment"
-                            android:layout_column="1"
-                            android:layout_marginLeft="5dp"
-                            android:layout_row="1"
-                            android:layout_toRightOf="@+id/comment"
-                            android:layout_weight="1"
-                            android:textSize="20dp"
-                            android:textColor="#000"
-                            android:text="Comment Loading" />
+                                    <TextView
+                                        android:id="@+id/commentValue"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignTop="@+id/comment"
+                                        android:layout_column="1"
+                                        android:layout_row="1"
+                                        android:layout_toRightOf="@+id/comment"
+                                        android:layout_weight="1"
+                                        android:textSize="20dp"
+                                        android:textColor="#fff"
+                                        android:text=" Comment Loading" />
 
-                    </RelativeLayout>
+                                </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
 
-                    <RelativeLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginTop="20dp">
-
-                        <TextView
-                            android:id="@+id/tvCurrentInning"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:text="Players"
-                            android:textSize="30dp"
-                            android:textStyle="bold"
-                            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-                        <TextView
-                            android:id="@+id/team1players"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Team 1 Players :"
-                            android:textSize="20dp"
-                            android:textColor="#000"
-                            android:layout_below="@+id/tvCurrentInning"
-                            android:layout_marginTop="20dp"/>
-                        <TextView
-                            android:id="@+id/players1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/team1players"
-                            android:text="Players 1"
-                            android:textColor="#000"
-                            android:textSize="15dp"
-                            android:layout_marginTop="10dp"/>
-
-                        <TextView
-                            android:id="@+id/team2players"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Team 2 Players :"
-                            android:textSize="20dp"
-                            android:textColor="#000"
-                            android:layout_below="@+id/players1"
-                            android:layout_marginTop="20dp"/>
-                        <TextView
-                            android:id="@+id/players2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/team2players"
-                            android:text="Players 2"
-                            android:textSize="15dp"
-                            android:textColor="#000"
-                            android:layout_marginTop="10dp"/>
-                    </RelativeLayout>
                     </LinearLayout>
 
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="5dp"
+                            android:background="@color/white"
+                            android:layout_margin="10dp"
+                            android:padding="10dp"
+                            android:elevation="50dp"
+                            app:cardBackgroundColor="#021473"
+                            app:cardUseCompatPadding="true">
+ 
+                        <!--                            app:cardMaxElevation="12dp"-->
+                                    <RelativeLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_marginTop="10dp">
+
+                                        <TextView
+                                            android:id="@+id/tvCurrentInning"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentLeft="true"
+                                            android:layout_alignParentTop="true"
+                                            android:text=" Players"
+                                            android:textSize="30dp"
+                                            android:textColor="#fff"
+                                            android:textStyle="bold"
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                                        <TextView
+                                            android:id="@+id/team1players"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" Team 1 Players :"
+                                            android:textSize="20dp"
+                                            android:textColor="#fff"
+                                            android:layout_below="@+id/tvCurrentInning"
+                                            android:layout_marginTop="20dp"/>
+                                        <TextView
+                                            android:id="@+id/players1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/team1players"
+                                            android:text=" Players 1"
+                                            android:textColor="#fff"
+                                            android:textSize="15dp"
+                                            android:layout_marginTop="10dp"/>
+
+                                        <TextView
+                                            android:id="@+id/team2players"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" Team 2 Players :"
+                                            android:textSize="20dp"
+                                            android:textColor="#fff"
+                                            android:layout_below="@+id/players1"
+                                            android:layout_marginTop="20dp"/>
+                                        <TextView
+                                            android:id="@+id/players2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/team2players"
+                                            android:text=" Players 2"
+                                            android:layout_marginBottom="10dp"
+                                            android:textSize="15dp"
+                                            android:textColor="#fff"
+                                            android:layout_marginTop="10dp"/>
+                                    </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
             </ScrollView>
 
         </RelativeLayout>
-
         <!--    <com.google.android.gms.ads.AdView-->
         <!--        android:id="@+id/adView"-->
         <!--        android:layout_width="fill_parent"-->

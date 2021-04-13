@@ -10,21 +10,25 @@
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="250px"
-        android:layout_margin="5px"
+        android:layout_margin="10px"
         android:onClick="showScoreBoard"
+        android:background="#021473"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
-        card_view:cardCornerRadius="4dp">
+        card_view:cardCornerRadius="5dp">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#021473">
             <TextView
                 android:id="@+id/state"
                 android:padding="10px"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="40px">
+                android:textColor="#FFFFFF"
+                android:textSize="30px"
+                android:layout_marginLeft="5dp">
 
             </TextView>
 
@@ -32,6 +36,7 @@
                 android:id="@+id/date"
                android:layout_centerHorizontal="true"
                 android:padding="10px"
+                android:textColor="#fff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="date value"
@@ -60,6 +65,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="5px"
                     android:elevation="50px"
+                    android:textColor="#fff"
                     android:text="Team 1"
                     android:textSize="40px" />
             </RelativeLayout>
@@ -69,7 +75,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="VS"
-            android:layout_centerHorizontal="true"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:textSize="40px">
 
@@ -83,6 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date"
+                android:textColor="#fff"
                 android:textSize="40px">
 
             </TextView>
@@ -98,6 +106,7 @@
                 android:layout_height="wrap_content"
                 android:elevation="50px"
                 android:text="Team 2"
+                android:textColor="#fff"
                 android:layout_marginRight="10dp"
                 android:layout_centerVertical="true"
                 android:textSize="40px" />
