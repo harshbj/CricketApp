@@ -162,15 +162,16 @@
                                         android:id="@+id/cardview1"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        app:cardCornerRadius="10dp"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_marginRight="10dp"
+                                        app:cardCornerRadius="12dp"
+                                        android:layout_marginLeft="0dp"
+                                        android:layout_marginRight="50dp"
                                         android:layout_marginBottom="10dp"
                                         android:layout_marginTop="30dp"
                                         android:elevation="50dp"
                                         android:background="#000"
-                                        app:cardBackgroundColor="#021473"
-                                        app:cardUseCompatPadding="true">
+                                        app:cardBackgroundColor="#021473">
+<!--                                        app:cardUseCompatPadding="true"-->
+
 
 
                                             <RelativeLayout
@@ -187,8 +188,9 @@
                                                     android:layout_column="0"
                                                     android:layout_row="0"
                                                     android:textSize="20dp"
-                                                    android:text=" Teams : "
+                                                    android:text="  Teams : "
                                                     android:textColor="#fff"
+                                                    android:layout_marginTop="5dp"
                                                     android:textAppearance="?android:attr/textAppearanceSmall" />
                                                 <TextView
                                                     android:id="@+id/vs"
@@ -202,6 +204,7 @@
                                                     android:textSize="20dp"
                                                     android:layout_rowSpan="1"
                                                     android:layout_weight="1"
+                                                    android:layout_marginTop="5dp"
                                                     android:textColor="#fff"
                                                     android:text=" Team1 vs Team2" />
 
@@ -212,7 +215,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:layout_below="@+id/vs"
                                                     android:layout_marginTop="10dp"
-                                                    android:text=" Status :"
+                                                    android:text="  Status :"
                                                     android:textSize="20dp"
                                                     android:textColor="#fff"/>
                                                 <TextView
@@ -246,7 +249,7 @@
                                                     android:layout_alignParentLeft="true"
                                                     android:layout_column="0"
                                                     android:layout_row="1"
-                                                    android:text=" Score : "
+                                                    android:text="  Score : "
                                                     android:layout_below="@+id/status"
                                                     android:layout_marginTop="10dp"
                                                     android:layout_marginBottom="5dp"
@@ -274,14 +277,14 @@
                             android:id="@+id/cardview3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:cardCornerRadius="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginRight="0dp"
                             android:layout_marginBottom="0dp"
                             android:elevation="50dp"
-                            app:cardBackgroundColor="#021473"
-                            app:cardUseCompatPadding="true"
-                            >
+                            app:cardBackgroundColor="#021473">
+<!--                            app:cardUseCompatPadding="true"-->
+
                                 <RelativeLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content">
@@ -351,11 +354,14 @@
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cardview2"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:cardCornerRadius="5dp"
                             android:background="@color/white"
-                            android:layout_margin="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
                             android:padding="10dp"
                             android:elevation="50dp"
                             app:cardBackgroundColor="#021473"
@@ -363,8 +369,8 @@
  
                         <!--                            app:cardMaxElevation="12dp"-->
                                     <RelativeLayout
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="fill_parent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
                                         android:layout_marginTop="10dp">
 
                                         <TextView
@@ -379,44 +385,81 @@
                                             android:textStyle="bold"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
+                                        <!--                                        <TextView-->
+<!--                                            android:id="@+id/players1"-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="wrap_content"-->
+<!--                                            android:layout_below="@id/team1players"-->
+<!--                                            android:text=" Players 1"-->
+<!--                                            android:textColor="#fff"-->
+<!--                                            android:textSize="15dp"-->
+<!--                                            android:layout_marginTop="10dp"/>-->
+
                                         <TextView
                                             android:id="@+id/team1players"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text=" Team 1 Players :"
-                                            android:textSize="20dp"
-                                            android:textColor="#fff"
                                             android:layout_below="@+id/tvCurrentInning"
-                                            android:layout_marginTop="20dp"/>
-                                        <TextView
-                                            android:id="@+id/players1"
+                                            android:layout_marginTop="20dp"
+                                            android:gravity="left"
+                                            android:text=" Team 1 Players:"
+                                            android:textColor="#fff"
+                                            android:textSize="17dp" />
+
+
+                                        <ListView
+                                            android:id="@+id/player1_list"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_below="@id/team1players"
-                                            android:text=" Players 1"
-                                            android:textColor="#fff"
-                                            android:textSize="15dp"
-                                            android:layout_marginTop="10dp"/>
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginLeft="5dp"
+                                            style="@style/TwoWayView"
+                                            android:layout_below="@+id/team1players"
+                                            />
+
 
                                         <TextView
                                             android:id="@+id/team2players"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text=" Team 2 Players :"
-                                            android:textSize="20dp"
+                                            android:text=" Team 2 Players:"
+                                            android:textSize="17dp"
                                             android:textColor="#fff"
-                                            android:layout_below="@+id/players1"
-                                            android:layout_marginTop="20dp"/>
-                                        <TextView
-                                            android:id="@+id/players2"
+                                            android:layout_marginTop="60dp"
+                                            android:textAlignment="viewEnd"
+                                            android:layout_marginRight="60dp"
+                                            android:layout_toRightOf="@+id/team1players"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_alignRight="@+id/team1players"/>
+
+
+
+                                        <ListView
+                                            android:id="@+id/player2_list"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_below="@id/team2players"
-                                            android:text=" Players 2"
-                                            android:layout_marginBottom="10dp"
-                                            android:textSize="15dp"
-                                            android:textColor="#fff"
-                                            android:layout_marginTop="10dp"/>
+                                            android:layout_marginTop="10dp"
+                                            style="@style/TwoWayView"
+                                            android:layout_marginRight="55dp"
+                                            android:textAlignment="viewEnd"
+                                            android:layout_marginLeft="30dp"
+                                            android:layout_toRightOf="@+id/team1players"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_alignRight="@+id/player1_list"
+                                            android:layout_below="@+id/team2players"
+                                            />
+
+<!--                                        <TextView-->
+<!--                                            android:id="@+id/players2"-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="wrap_content"-->
+<!--                                            android:layout_below="@id/team2players"-->
+<!--                                            android:text=" Players 2"-->
+<!--                                            android:layout_marginBottom="10dp"-->
+<!--                                            android:textSize="15dp"-->
+<!--                                            android:layout_alignRight="@+id/team1players"-->
+<!--                                            android:textColor="#fff"-->
+<!--                                            android:layout_marginTop="10dp"/>-->
                                     </RelativeLayout>
                         </androidx.cardview.widget.CardView>
 

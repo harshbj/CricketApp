@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -20,6 +22,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.Map;
 
 public class Scoreboard extends AppCompatActivity {
+
+    String[] mobileArray = {"Prithvi shaw","A B Diewillas","Dhawan","Rahane",
+            "Pant","Stoinis","Lalit Yadav","Tom Curran","Chris Morris","Ashwin","Rabada","Avesh patel"};
+
+
 
     public static ProgressBar loader;
     public static TextView id;
@@ -52,6 +59,16 @@ public class Scoreboard extends AppCompatActivity {
         String id = main.getStringExtra("id");
 
         new Scoreboard().getScore(id);
+
+
+
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,
+                R.layout.activity_listview, mobileArray);
+
+        ListView listView = (ListView) findViewById(R.id.player1_list);
+        listView.setAdapter(adapter);
+        ListView listView1 = (ListView) findViewById(R.id.player2_list);
+        listView1.setAdapter(adapter);
     }
 
     private void getScore(String id) {
