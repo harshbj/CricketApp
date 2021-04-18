@@ -24,7 +24,7 @@ import java.util.Map;
 public class Match {
 
 
-    public Match(String id, String date, String localDateTime, String team_1, String team_2, Boolean squad, String type, String toss_winner, String winner_team, String match_started) {
+    public Match(String id, String date, String localDateTime, String team_1, String team_2, Boolean squad, String type, String toss_winner, String winner_team, String match_started,String team1img,String team2img) {
         this.id = id;
         this.date = date;
         this.localDateTime = localDateTime;
@@ -35,6 +35,8 @@ public class Match {
         this.toss_winner = toss_winner;
         this.winner_team = winner_team;
         this.match_started = match_started;
+        this.team1img = team1img;
+        this.team2img = team2img;
     }
     private String id;
     private String date;
@@ -42,10 +44,29 @@ public class Match {
     private String team_1;
     private String team_2;
     private Boolean squad;
+
+    public String getTeam1img() {
+        return team1img;
+    }
+
+    public void setTeam1img(String team1img) {
+        this.team1img = team1img;
+    }
+
+    public String getTeam2img() {
+        return team2img;
+    }
+
+    public void setTeam2img(String team2img) {
+        this.team2img = team2img;
+    }
+
     private String type;
     private String toss_winner;
     private String winner_team;
     private String match_started;
+    private String team1img;
+    private String team2img;
 
     public String getDate() {
         return date;
@@ -156,7 +177,8 @@ public class Match {
                         team2.get("name"),
                         true,
                         "IPL",
-                        "", "", matchMap.get("state"));
+                        "", "", matchMap.get("state"),
+                        team1.get("logo"),team2.get("logo"));
 
                 matches.add(match);
         }

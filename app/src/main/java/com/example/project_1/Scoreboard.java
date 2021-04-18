@@ -72,6 +72,7 @@ public class Scoreboard extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     private void setData(DocumentSnapshot document) {
