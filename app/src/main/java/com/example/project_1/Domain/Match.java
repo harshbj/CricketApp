@@ -17,6 +17,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -182,7 +184,23 @@ public class Match {
 
                 matches.add(match);
         }
-        System.out.println("Dtaa passed"+matches.size());
+
+
+        Collections.sort(matches, (o1, o2) -> {
+
+            SimpleDateFormat date = new SimpleDateFormat("dd MMMM yyyy");
+            try {
+                Date date1 = date.parse(o1.getDate());
+                Date date2 = date.parse(o2.getDate());
+                return date1.compareTo(date2);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            return o1.getDate().compareTo(o2.getDate());
+        });
+        System.out.println("Dtaa sorted"+matches.get(0).getDate()+" "+matches.get(1).getDate());
+
         return matches;
     }
+
 }
