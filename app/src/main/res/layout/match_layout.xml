@@ -7,9 +7,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="250px"
+        android:layout_height="300px"
         android:layout_margin="10px"
         android:onClick="showScoreBoard"
         android:background="#021473"
@@ -44,31 +43,31 @@
 
             </TextView>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10px">
-                <ImageView
-                    android:id="@+id/imageteam1"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/cricketlogo"
-                    />
-                <TextView
-                    android:id="@+id/team1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_toRightOf="@+id/imageteam1"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5px"
-                    android:elevation="50px"
-                    android:textColor="#fff"
-                    android:text="Team 1"
-                    android:textSize="40px" />
-            </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10px">
+                        <ImageView
+                            android:id="@+id/imageteam1"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/cricketlogo"
+                            />
+                        <TextView
+                            android:id="@+id/team1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_toRightOf="@+id/imageteam1"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5px"
+                            android:elevation="50px"
+                            android:textColor="#fff"
+                            android:text="Team 1"
+                            android:textSize="40px" />
+                    </RelativeLayout>
 
             <TextView
             android:id="@+id/vs"
@@ -94,33 +93,33 @@
                 android:textSize="40px">
 
             </TextView>
-        <RelativeLayout
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_marginRight="10px"
-            android:layout_height="match_parent">
+                    <RelativeLayout
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="10px"
+                        android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/team2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="50px"
-                android:text="Team 2"
-                android:textColor="#fff"
-                android:layout_marginRight="10dp"
-                android:layout_centerVertical="true"
-                android:textSize="40px" />
+                        <TextView
+                            android:id="@+id/team2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="50px"
+                            android:text="Team 2"
+                            android:textColor="#fff"
+                            android:layout_marginRight="10dp"
+                            android:layout_centerVertical="true"
+                            android:textSize="40px" />
 
 
-            <ImageView
-                android:id="@+id/imageteam2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="10dp"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/team2"
-                android:src="@drawable/cricketlogo" />
-        </RelativeLayout>
+                        <ImageView
+                            android:id="@+id/imageteam2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/team2"
+                            android:src="@drawable/cricketlogo" />
+                    </RelativeLayout>
 
 
         </RelativeLayout>
