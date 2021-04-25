@@ -1,4 +1,4 @@
-package com.example.project_1.Domain;
+package com.example.IPLSCORE.Domain;
 
 import org.json.JSONException;
 import org.json.JSONObject;

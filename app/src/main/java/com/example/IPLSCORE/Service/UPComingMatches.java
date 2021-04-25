@@ -1,30 +1,20 @@
-package com.example.project_1.Service;
+package com.example.IPLSCORE.Service;
 
 import android.os.AsyncTask;
 import android.os.Build;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-import com.example.project_1.Domain.Match;
-import com.example.project_1.MainActivity;
+import com.example.IPLSCORE.Domain.Match;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import org.json.JSONException;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.stream.Collectors;
@@ -45,7 +35,7 @@ public class UPComingMatches extends AsyncTask<String,Void,ArrayList<Match>> {
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()) {
                                 try {
-                                    matchList.addAll(Match.createMatchList(task));
+                                    matchList.addAll(Match.createUpComingMatchList(task));
                                     System.out.println("Result"+matchList.size());
                                 } catch (JSONException e) {
                                     e.printStackTrace();

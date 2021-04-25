@@ -8,7 +8,7 @@
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:background="#C3FFFFFF"
-        tools:context=".Scoreboard">
+        tools:context=".Activities.Scoreboard">
 
         <RelativeLayout
             android:id="@+id/view"
@@ -25,115 +25,6 @@
                 android:layout_height="wrap_content"
                 android:indeterminate="true" />
 
-
-
-
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:id="@+id/scorecardview"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="200dp"-->
-<!--                app:cardBackgroundColor="#fff"-->
-<!--                android:layout_marginTop="50dp"-->
-<!--                android:layout_marginRight="20dp"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                app:cardCornerRadius="5dp">-->
-<!--                <LinearLayout-->
-<!--                    android:id="@+id/linear1"-->
-<!--                    android:layout_width="fill_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:layout_marginTop="10dp">-->
-<!--                    <RelativeLayout-->
-<!--                        android:layout_width="fill_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        >-->
-<!--                <TextView-->
-<!--                    android:id="@+id/textView.."-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_alignBottom="@+id/vs"-->
-<!--                    android:layout_alignParentLeft="true"-->
-<!--                    android:layout_alignParentTop="true"-->
-<!--                    android:layout_column="0"-->
-<!--                    android:layout_row="0"-->
-<!--                    android:textSize="20dp"-->
-<!--                    android:text=" Teams : "-->
-<!--                    android:textColor="#000"-->
-<!--                    android:textAppearance="?android:attr/textAppearanceSmall" />-->
-<!--                <TextView-->
-<!--                    android:id="@+id/vs.."-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_alignLeft="@+id/statusValue"-->
-<!--                    android:layout_alignParentRight="true"-->
-<!--                    android:layout_alignParentTop="true"-->
-<!--                    android:layout_column="1"-->
-<!--                    android:layout_columnSpan="1"-->
-<!--                    android:layout_row="0"-->
-<!--                    android:textSize="20dp"-->
-<!--                    android:layout_rowSpan="1"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:textColor="#000"-->
-<!--                    android:text=" Team1 vs Team2" />-->
-<!--                </LinearLayout>-->
-
-
-<!--                <LinearLayout-->
-<!--                    android:id="@+id/linear2"-->
-<!--                    android:layout_width="fill_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:layout_marginTop="10dp">-->
-<!--                <TextView-->
-<!--                    android:id="@+id/status.."-->
-<!--                    android:layout_width="80dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_alignParentLeft="true"-->
-<!--                    android:layout_below="@+id/vs"-->
-<!--                    android:layout_column="0"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:layout_row="1"-->
-<!--                    android:text=" Status :"-->
-<!--                    android:textSize="20dp"-->
-<!--                    android:textColor="#000"-->
-<!--                    android:textAppearance="?android:attr/textAppearanceSmall" />-->
-<!--                <TextView-->
-<!--                    android:id="@+id/statusValue.."-->
-<!--                    android:layout_width="fill_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_alignTop="@+id/status"-->
-<!--                    android:layout_column="1"-->
-<!--                    android:layout_marginLeft="5dp"-->
-<!--                    android:layout_row="1"-->
-<!--                    android:layout_toRightOf="@+id/status"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:textColor="#000"-->
-<!--                    android:textSize="20dp"-->
-<!--                    android:text=" Status Loading" />-->
-<!--                </LinearLayout>-->
-<!--                -->
-<!--            </androidx.cardview.widget.CardView>-->
-
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="fill_parent"-->
-<!--                android:layout_height="fill_parent"-->
-<!--                android:layout_marginBottom="5dp"-->
-<!--                android:layout_weight="0.9"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/title"-->
-<!--                    android:layout_width="fill_parent"-->
-<!--                    android:layout_height="fill_parent"-->
-<!--                    android:layout_alignParentTop="true"-->
-<!--                    android:layout_centerHorizontal="true"-->
-<!--                    android:layout_weight="0.7"-->
-<!--                    android:gravity="top|center_horizontal"-->
-<!--                    android:text="Loading"-->
-<!--                    android:textSize="20sp" />-->
-
-<!--            </LinearLayout>-->
 
             <ScrollView
                 android:id="@+id/scrollView2"

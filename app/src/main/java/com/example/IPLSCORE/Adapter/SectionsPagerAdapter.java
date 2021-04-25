@@ -1,4 +1,4 @@
-package com.example.project_1.ui.main;
+package com.example.IPLSCORE.Adapter;
 
 import android.content.Context;
 
@@ -8,7 +8,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.project_1.R;
+import com.example.IPLSCORE.R;
+import com.example.IPLSCORE.fragments.FinishedMatches;
+import com.example.IPLSCORE.fragments.LiveMatches;
+import com.example.IPLSCORE.fragments.UpcomingMatches;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -29,7 +32,19 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        switch (position){
+            case 0:
+                return new UpcomingMatches();
+
+            case 1:
+                return new LiveMatches();
+
+            case 2:
+                return new FinishedMatches();
+
+            default:
+                return null;
+        }
     }
 
     @Nullable
